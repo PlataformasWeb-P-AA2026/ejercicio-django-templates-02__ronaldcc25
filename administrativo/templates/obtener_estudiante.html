@@ -9,5 +9,19 @@
 <p><b>Cédula:</b>{{estudiante.cedula}}</p>
 <p><b>Correo:</b>{{estudiante.correo}}</p>
 
+<hr>
+<h4>Números Telefónicos Registrados</h4>
+<ul>
+  {% for t in estudiante.numeros_telefonicos.all %}
+    <li>
+      <span>{{t.telefono}} - <span>{{t.tipo}}</span> - Costo mensual: ${{t.valor_mensual}}</span>
+    </li>
+  {% empty %}
+    <li>No tiene números telefónicos registrados.</li>
+  {% endfor %}
+</ul>
+<p style="margin-top: 10px;"><b>Total de Teléfonos:</b> {{estudiante.obtener_num_telefonos}}</p>
+<p><b>Costo Total:</b> ${{estudiante.obtener_costo_telefonos}}</p>
+
 <br/>
 {% endblock %}

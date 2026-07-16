@@ -30,13 +30,15 @@
       <ul>
         {% for t in e.numeros_telefonicos.all %}
           <li>
-            <span>{{t.telefono}} - <span>{{t.tipo}}</span> - <a href="{% url 'editar_numero_telefonico' t.id %}" title="editar"><i class="fa fa-edit"></i></a> </span>
+            <span>{{t.telefono}} - <span>{{t.tipo}}</span> - Costo: ${{t.valor_mensual}} - <a href="{% url 'editar_numero_telefonico' t.id %}" title="editar"><i class="fa fa-edit"></i></a> </span>
           </li>
         {% endfor %}
       </ul>
-      <div class="main-blue-button">
+      <p style="margin-top: 5px; margin-bottom: 10px;"><b>Costo Total:</b> ${{ e.obtener_costo_telefonos }}</p>
+      <div class="main-blue-button" style="display: inline-block;">
         <a href="{% url 'crear_numero_telefonico_estudiante' e.id%}">+Teléfono</a>
       </div>
+      <span style="font-weight: bold; margin-left: 10px; vertical-align: middle;">Total Teléfonos: {{ e.obtener_num_telefonos }}</span>
 
     </td>
     <td>

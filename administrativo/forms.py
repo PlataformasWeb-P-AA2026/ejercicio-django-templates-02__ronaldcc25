@@ -51,7 +51,7 @@ class EstudianteForm(ModelForm):
 class NumeroTelefonicoForm(ModelForm):
     class Meta:
         model = NumeroTelefonico
-        fields = ['telefono', 'tipo', 'estudiante']
+        fields = ['telefono', 'tipo', 'valor_mensual', 'estudiante']
 
 
 class NumeroTelefonicoEstudianteForm(ModelForm):
@@ -64,4 +64,4 @@ class NumeroTelefonicoEstudianteForm(ModelForm):
 
     class Meta:
         model = NumeroTelefonico
-        fields = ['telefono', 'tipo', 'estudiante']
+        fields = ['telefono', 'tipo', 'valor_mensual', 'estudiante']
